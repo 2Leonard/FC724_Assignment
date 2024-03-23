@@ -13,9 +13,9 @@
         <!-- Creat navigation bar for user to access to other sections of website -->
         <nav>
             <ul style="list-style-type: armenian; margin: 0; padding: 0; text-align: center;">
-                <li style="display: inline; margin: 10px;"><a href="WelcomePage.html">Home</a></li>
-                <li style="display: inline; margin: 10px;"><a href="InformationPage.html">Information</a></li>
-                <li style="display: inline; margin: 10px;"><a href="DataCollectionPage.html">DataCollection</a></li>
+                <li style="display: inline; margin: 10px;"><a href="{{ url_for('welcome_page') }}">Home</a></li>
+                <li style="display: inline; margin: 10px;"><a href="{{ url_for('information_page') }}l">Information</a></li>
+                <li style="display: inline; margin: 10px;"><a href="{{ url_for('data_collection_page') }}">DataCollection</a></li>
             </ul>
         </nav>
     </header>
@@ -26,49 +26,79 @@
             <!-- Questionnaire -->
             <h2>Data Collection Questionnaire</h2>
             <!-- Form for data collection -->
-            <form action="submit_form" method="post">
-                <!-- Input user's name -->
-                <label for="student_name" style="font-weight: bold; display: block;">Name:</label>
-                <input type="text" id="student_name" name="student_name" required style="padding: 5px; border: 2px solid;"><br>
-                <!-- Input user's student's number -->
-                <label for="student_number" style="font-weight: bold; display: block;">Student Number:</label>
-                <input type="text" id="student_number" name="student_number" required style="padding: 5px; border: 2px solid;"><br>
-                <!-- Input user's email -->
-                <label for="email" style="font-weight: bold; display: block;">Email:</label>
-                <input type="email" id="email" name="email" required style="padding: 5px; border: 2px solid;"><br>
-                <!-- Input user's grades -->
-                <label for="grades" style="font-weight: bold; display: block;">Grades Obtained in Courses:</label>
-                <textarea id="grades" name="grades" rows="3" required style="padding: 5px; border: 2px solid;"></textarea><br>
-                <!-- Select user's satisfaction for GIC -->
-                <label for="satisfaction" style="font-weight: bold; display: block;">Overall Satisfaction:</label>
-                <select id="satisfaction" name="satisfaction" required style="padding: 5px; border: 2px solid;">
-                    <option value="very good">Very Good</option>
-                    <option value="good">Good</option>
-                    <option value="neither good nor bad">Neither Good Nor Bad</option>
-                    <option value="bad">Bad</option>
-                    <option value="very bad">Very Bad</option>
-                </select>
-                <!-- Long-form answer for suggestion -->
-                <label for="suggestions" style="font-weight: bold; display: block;">Suggestions for Improvement:</label>
-                <textarea id="suggestions" name="suggestions" rows="4" style="padding: 5px; border: 2px solid;"></textarea><br>
-                <!-- Multiple-choice question for facilities -->
-                <label for="facilities" style="font-weight: bold; display: block;">Facilities Need be Improved:</label>
-                <select id="facilities" name="facilities" multiple style="padding: 5px; border: 2px solid;">
-                    <option value="screen projector">Screen Project</option>
-                    <option value="air conditioner">Air Conditioner</option>
-                    <option value="heat">Heat</option>
-                    <option value="ventilate system">Ventilate System</option>
-                    <option value="radio">Radio</option>
-                    <option value="desk/chair">Desk/Chair</option>
-                    <option value="none">None</option>
-                </select>
-                <!-- Long-form answer for other feedback -->
-                <fieldset style="margin-bottom: 10px">
-                    <legend style="font-weight: bold;">Do you have other feedback?</legend>
-                    <label for="feedback"></label><textarea id="feedback" name="feedback" rows="4" style="padding: 5px; border: 2px solid;"></textarea>
-                </fieldset>
-                <!-- Create submit button to submit the form -->
-                <input type="submit" value="Submit" style="color: crimson; background-color: aqua; padding: 10px; border: crimson; border-radius: 5px; cursor: grab;">
+            <form method="post">
+                {{ form.hidden_tag() }}
+                <div>
+                    {{ form.student_name.label }}
+                    {{ form.student_name(class_='form-input') }}
+                    {% if form.student_name.errors %}
+                        <span style="color: red;">{{ form.student_name.errors[0] }}</span>
+                    {% endif %}
+                </div>
+                <br>
+
+                <div>
+                    {{ form.student_number.label }}
+                    {{ form.student_number(class_='form-input') }}
+                    {% if form.student_number.errors %}
+                        <span style="color: red;">{{ form.student_number.errors[0] }}</span>
+                    {% endif %}
+                </div>
+                <br>
+
+                <div>
+                    {{ form.email.label }}
+                    {{ form.email(class_='form-input') }}
+                    {% if form.email.errors %}
+                        <span style="color: red;">{{ form.email.errors[0] }}</span>
+                    {% endif %}
+                </div>
+                <br>
+
+                <div>
+                    {{ form.grades.label }}
+                    {{ form.grades(class_='form-input') }}
+                    {% if form.grades.errors %}
+                        <span style="color: red;">{{ form.grades.errors[0] }}</span>
+                    {% endif %}
+                </div>
+                <br>
+
+                <div>
+                    {{ form.satisfaction.label }}
+                    {{ form.satisfaction(class_='form-input') }}
+                    {% if form.satisfaction.errors %}
+                        <span style="color: red;">{{ form.satisfaction.errors[0] }}</span>
+                    {% endif %}
+                </div>
+                <br>
+
+                <div>
+                    {{ form.suggestion.label }}
+                    {{ form.suggestion(class_='form-input') }}
+                </div>
+                <br>
+
+                <div>
+                    {{ form.facilities.label }}
+                    {{ form.facilities(class_='form-input') }}
+                    {% if form.facilities.errors %}
+                        <span style="color: red;">{{ form.facilities.errors[0] }}</span>
+                    {% endif %}
+                </div>
+                <br>
+
+                <div>
+                    <fieldset>
+                        <legend>{{ form.feedback.label }}</legend>
+                        {{ form.feedback(class_='form-input') }}
+                    </fieldset>
+                </div>
+                <br>
+
+                <div>
+                    {{ form.submit(class_='submit-button') }}
+                </div>
             </form>
         </section>
     </main>

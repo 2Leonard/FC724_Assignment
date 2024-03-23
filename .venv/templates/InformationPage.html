@@ -14,9 +14,9 @@
         <!-- Creat navigation bar for user to access to other sections of website -->
         <nav>
             <ul style="list-style-type: armenian; margin: 0; padding: 0; text-align: center;">
-                <li style="display: inline; margin: 10px;"><a href="WelcomePage.html">Home</a></li>
-                <li style="display: inline; margin: 10px;"><a href="InformationPage.html">Information</a></li>
-                <li style="display: inline; margin: 10px;"><a href="../../../../Desktop/FC724Assignment1,2%20copy/DataCollectionPage.html">DataCollection</a></li>
+                <li style="display: inline; margin: 10px;"><a href="{{ url_for('welcome_page') }}">Home</a></li>
+                <li style="display: inline; margin: 10px;"><a href="{{ url_for('information_page') }}">Information</a></li>
+                <li style="display: inline; margin: 10px;"><a href="{{ url_for('data_collection_page') }}">DataCollection</a></li>
             </ul>
         </nav>
     </header>

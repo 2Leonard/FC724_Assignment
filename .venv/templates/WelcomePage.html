@@ -15,9 +15,9 @@
         <!-- Creat navigation bar for user to access to other sections of website -->
         <nav>
             <ul style="list-style-type: armenian; margin: 0; padding: 0; text-align: center;">
-                <li style="display: inline; margin: 10px;"><a href="WelcomePage.html">Home</a></li>
-                <li style="display: inline; margin: 10px;"><a href="InformationPage.html">Information</a> </li>
-                <li style="display: inline; margin: 10px;"><a href="DataCollectionPage.html">DataCollection</a> </li>
+                <li style="display: inline; margin: 10px;"><a href="{{ url_for('welcome_page') }}">Home</a></li>
+                <li style="display: inline; margin: 10px;"><a href="{{ url_for('information_page') }}">Information</a> </li>
+                <li style="display: inline; margin: 10px;"><a href="{{ url_for('data_collection_page') }}">DataCollection</a> </li>
             </ul>
         </nav>
     </header>
@@ -39,19 +39,19 @@
     <!-- Display scroll pictures and style the slide-->
     <div class="my-slideshow-container" style="width: 55%; overflow: hidden; margin: auto; text-align: center;">
         <div class="slide" style="display: inline-block">
-            <img style="width: 40%; height: auto;" src="IMG_2052.jpeg" alt="image1">
+            <img style="width: 40%; height: auto;" src="{{ url_for('static', filename='IMG_2052.jpeg') }}" alt="image1">
         </div>
         <div class="slide" style="display: inline-block;">
-            <img style="width: 40%; height: auto;" src="IMG_7398.jpeg" alt="image2">
+            <img style="width: 40%; height: auto;" src="{{ url_for('static', filename='IMG_7398.jpeg') }}" alt="image2">
         </div>
         <div class="slide" style="display: inline-block;">
-            <img style="width: 40%; height: auto;" src="IMG_0531.jpeg" alt="image3">
+            <img style="width: 40%; height: auto;" src="{{ url_for('static', filename='IMG_0531.jpeg') }}" alt="image3">
         </div>
         <div class="slide" style="display: inline-block;">
-            <img style="width: 40%; height: auto;" src="IMG_8421.jpeg" alt="image4">
+            <img style="width: 40%; height: auto;" src="{{ url_for('static', filename='IMG_8421.jpeg') }}" alt="image4">
         </div>
         <div class="slide" style="display: inline-block;">
-             <img style="width: 40%; height: auto;" src="IMG_9987.jpeg" alt="image5">
+             <img style="width: 40%; height: auto;" src="{{ url_for('static', filename='IMG_9987.jpeg') }}" alt="image5">
         </div>
     </div>
     <!-- Embed JavaScript code in HTML page to realize pictures automatically played -->
