@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <!-- Define the title of the HTML document -->
+    <title>Welcome to GIC Students' Progress Website</title>
+</head>
+<!-- Style the body part -->
+<body style="font-family: sans-serif; margin: 0; padding: 0; background-color: antiquewhite;">
+    <!-- Set and style the header -->
+    <header style="background-color: cornflowerblue;color: aliceblue; padding: 30px; text-align: center;">
+        <!-- Welcome message to greet users -->
+        <h1>Welcome to GIC Students' Progress Website</h1>
+        <!-- Creat navigation bar for user to access to other sections of website -->
+        <nav>
+            <ul style="list-style-type: armenian; margin: 0; padding: 0; text-align: center;">
+                <li style="display: inline; margin: 10px;"><a href="WelcomePage.html">Home</a></li>
+                <li style="display: inline; margin: 10px;"><a href="InformationPage.html">Information</a> </li>
+                <li style="display: inline; margin: 10px;"><a href="DataCollectionPage.html">DataCollection</a> </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Design the section of main part -->
+    <main style="padding: 20px;" >
+        <!-- style the section part -->
+        <section style="background-color: aliceblue; padding: 20px; border-radius: 20px;">
+            <!-- Brief introduction of the website -->
+            <h2>GIC Students' Progress Website</h2>
+            <p>This is a comprehensive website that serves as a platform for assessing and collecting data on students' progress at GIC (Glasgow International College). You can navigate through the following sections:</p>
+            <!-- A brief overview of what the user can expect and navigate through on the site -->
+            <ul>
+                <li><strong>Home:</strong> This is the welcome page where you are currently.</li>
+                <li><strong>Information:</strong> Learn more about us on information page.</li>
+                <li><strong>DataCollection:</strong> Please complete the questionnaire on your progress at GIC on DataCollection page.</li>
+            </ul>
+        </section>
+    </main>
+    <!-- Display scroll pictures and style the slide-->
+    <div class="my-slideshow-container" style="width: 55%; overflow: hidden; margin: auto; text-align: center;">
+        <div class="slide" style="display: inline-block">
+            <img style="width: 40%; height: auto;" src="IMG_2052.jpeg" alt="image1">
+        </div>
+        <div class="slide" style="display: inline-block;">
+            <img style="width: 40%; height: auto;" src="IMG_7398.jpeg" alt="image2">
+        </div>
+        <div class="slide" style="display: inline-block;">
+            <img style="width: 40%; height: auto;" src="IMG_0531.jpeg" alt="image3">
+        </div>
+        <div class="slide" style="display: inline-block;">
+            <img style="width: 40%; height: auto;" src="IMG_8421.jpeg" alt="image4">
+        </div>
+        <div class="slide" style="display: inline-block;">
+             <img style="width: 40%; height: auto;" src="IMG_9987.jpeg" alt="image5">
+        </div>
+    </div>
+    <!-- Embed JavaScript code in HTML page to realize pictures automatically played -->
+    <script>
+        //Define current slide index
+        let slideIndex = 0;
+        // Gets all slide elements
+        const slides = document.querySelectorAll('.slide');
+        // Define function to show slides
+        function showSlides() {
+            // Hide all elements first
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+            }
+            // Update index of slide
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            // Show current slide
+            slides[slideIndex - 1].style = 'block';
+            // Set timeout and call self function to realize automatic slide played
+            setTimeout(showSlides, 3000);
+        }
+        // Call the function
+        showSlides()
+    </script>
+    <!-- Create the footer part -->
+    <footer style="background-color: antiquewhite; padding-left: 10px; color: blue; width: auto; position: absolute;">
+        <!-- Provide the contact information for questions and a thank banner made website more user-friendly -->
+        <p>If you have further questions, please contact us at: studentprogress@gic.com</p>
+        <p>Thank you for visiting our website!</p>
+    </footer>
+</body>
+</html>

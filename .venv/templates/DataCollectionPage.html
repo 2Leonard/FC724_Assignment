@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <!-- Define the title of the HTML document -->
+    <title>Data Collection Page</title>
+<!-- Style the body part -->
+<body style="font-family: sans-serif; margin: 0; padding: 0; background-color: antiquewhite;">
+    <!-- Set and style the header -->
+    <header style="background-color: cornflowerblue;color: aliceblue; padding: 30px;text-align: center;">
+        <h1>Data Collection Page</h1>
+        <!-- Creat navigation bar for user to access to other sections of website -->
+        <nav>
+            <ul style="list-style-type: armenian; margin: 0; padding: 0; text-align: center;">
+                <li style="display: inline; margin: 10px;"><a href="WelcomePage.html">Home</a></li>
+                <li style="display: inline; margin: 10px;"><a href="InformationPage.html">Information</a></li>
+                <li style="display: inline; margin: 10px;"><a href="DataCollectionPage.html">DataCollection</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Design the section of main part -->
+    <main style="padding: 20px; text-align: left;">
+        <!-- style the section part -->
+        <section style="background-color: aliceblue; padding: 20px; border-radius: 20px;">
+            <!-- Questionnaire -->
+            <h2>Data Collection Questionnaire</h2>
+            <!-- Form for data collection -->
+            <form action="submit_form" method="post">
+                <!-- Input user's name -->
+                <label for="student_name" style="font-weight: bold; display: block;">Name:</label>
+                <input type="text" id="student_name" name="student_name" required style="padding: 5px; border: 2px solid;"><br>
+                <!-- Input user's student's number -->
+                <label for="student_number" style="font-weight: bold; display: block;">Student Number:</label>
+                <input type="text" id="student_number" name="student_number" required style="padding: 5px; border: 2px solid;"><br>
+                <!-- Input user's email -->
+                <label for="email" style="font-weight: bold; display: block;">Email:</label>
+                <input type="email" id="email" name="email" required style="padding: 5px; border: 2px solid;"><br>
+                <!-- Input user's grades -->
+                <label for="grades" style="font-weight: bold; display: block;">Grades Obtained in Courses:</label>
+                <textarea id="grades" name="grades" rows="3" required style="padding: 5px; border: 2px solid;"></textarea><br>
+                <!-- Select user's satisfaction for GIC -->
+                <label for="satisfaction" style="font-weight: bold; display: block;">Overall Satisfaction:</label>
+                <select id="satisfaction" name="satisfaction" required style="padding: 5px; border: 2px solid;">
+                    <option value="very good">Very Good</option>
+                    <option value="good">Good</option>
+                    <option value="neither good nor bad">Neither Good Nor Bad</option>
+                    <option value="bad">Bad</option>
+                    <option value="very bad">Very Bad</option>
+                </select>
+                <!-- Long-form answer for suggestion -->
+                <label for="suggestions" style="font-weight: bold; display: block;">Suggestions for Improvement:</label>
+                <textarea id="suggestions" name="suggestions" rows="4" style="padding: 5px; border: 2px solid;"></textarea><br>
+                <!-- Multiple-choice question for facilities -->
+                <label for="facilities" style="font-weight: bold; display: block;">Facilities Need be Improved:</label>
+                <select id="facilities" name="facilities" multiple style="padding: 5px; border: 2px solid;">
+                    <option value="screen projector">Screen Project</option>
+                    <option value="air conditioner">Air Conditioner</option>
+                    <option value="heat">Heat</option>
+                    <option value="ventilate system">Ventilate System</option>
+                    <option value="radio">Radio</option>
+                    <option value="desk/chair">Desk/Chair</option>
+                    <option value="none">None</option>
+                </select>
+                <!-- Long-form answer for other feedback -->
+                <fieldset style="margin-bottom: 10px">
+                    <legend style="font-weight: bold;">Do you have other feedback?</legend>
+                    <label for="feedback"></label><textarea id="feedback" name="feedback" rows="4" style="padding: 5px; border: 2px solid;"></textarea>
+                </fieldset>
+                <!-- Create submit button to submit the form -->
+                <input type="submit" value="Submit" style="color: crimson; background-color: aqua; padding: 10px; border: crimson; border-radius: 5px; cursor: grab;">
+            </form>
+        </section>
+    </main>
+    <!-- Create the footer part -->
+    <footer style="background-color: antiquewhite; padding-left: 10px; color: blue; width: auto; position: absolute;">
+        <!-- Provide the contact information for questions and a thank banner made website more user-friendly -->
+        <p>If you have further questions, please contact us at: studentprogress@gic.com</p>
+        <p>Thank you for visiting our website!</p>
+    </footer>
+</body>
+</html>
